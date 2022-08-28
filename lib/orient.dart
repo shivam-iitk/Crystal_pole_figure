@@ -46,7 +46,7 @@ class _orientState extends State<orient> {
 
   _setValue2() {
     if (double.parse(controller2.text).roundToDouble() >= 0 &&
-        double.parse(controller2.text).roundToDouble() <= 360) {
+        double.parse(controller2.text).roundToDouble() <= 180) {
       setState(() {
         value2 = double.parse(controller2.text).roundToDouble();
       });
@@ -89,13 +89,16 @@ class _orientState extends State<orient> {
                     }),
               ),
               Container(
+                decoration: BoxDecoration(
+                    color: Colors.blue[800],
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 height: 35,
                 width: 44,
-                color: Colors.blue,
                 child: TextField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      border: InputBorder.none, hintText: '0.0'),
+                      border: InputBorder.none,
+                      hintText: value1.toStringAsFixed(1)),
                   onChanged: (value) {
                     _setValue1();
                   },
@@ -107,7 +110,7 @@ class _orientState extends State<orient> {
                 child: Container(
                   height: 25,
                   width: 40,
-                  child: Text(
+                  child: const Text(
                     'ɸ₁',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -125,8 +128,8 @@ class _orientState extends State<orient> {
                 width: 300,
                 child: Slider.adaptive(
                     value: value2,
-                    min: 0,
-                    max: 360,
+                    min: 0.0,
+                    max: 180.0,
                     activeColor: Colors.blue,
                     inactiveColor: Colors.blue[900],
                     onChanged: (value) {
@@ -139,11 +142,14 @@ class _orientState extends State<orient> {
               Container(
                 height: 35,
                 width: 44,
-                color: Colors.blue,
+                decoration: BoxDecoration(
+                    color: Colors.blue[800],
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: TextField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      border: InputBorder.none, hintText: '0.0'),
+                      border: InputBorder.none,
+                      hintText: value2.toStringAsFixed(1)),
                   onChanged: (value) {
                     _setValue2();
                   },
@@ -155,7 +161,7 @@ class _orientState extends State<orient> {
                 child: Container(
                   height: 30,
                   width: 40,
-                  child: Text(
+                  child: const Text(
                     'φ',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -173,8 +179,8 @@ class _orientState extends State<orient> {
                 width: 300,
                 child: Slider.adaptive(
                     value: value3,
-                    min: 0,
-                    max: 360,
+                    min: 0.0,
+                    max: 360.0,
                     activeColor: Colors.blue,
                     inactiveColor: Colors.blue[900],
                     onChanged: (value) {
@@ -187,11 +193,14 @@ class _orientState extends State<orient> {
               Container(
                 height: 35,
                 width: 44,
-                color: Colors.blue,
+                decoration: BoxDecoration(
+                    color: Colors.blue[800],
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: TextField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      border: InputBorder.none, hintText: '0.0'),
+                      border: InputBorder.none,
+                      hintText: value3.toStringAsFixed(1)),
                   onChanged: (value) {
                     _setValue3();
                   },
@@ -203,7 +212,7 @@ class _orientState extends State<orient> {
                 child: Container(
                   height: 30,
                   width: 40,
-                  child: Text(
+                  child: const Text(
                     'ɸ₂',
                     style: TextStyle(color: Colors.white),
                   ),
