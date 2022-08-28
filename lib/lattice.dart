@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
 String latticetype = "Cubic";
-String component = "Cubic";
+String component = "{001}<100> Cube";
 bool show = false;
 
 double hexc = 0.00;
 double orthoc = 0.00;
 double orthob = 0.00;
 double monoc = 0.00;
-
 
 final List<String> items = [
   'Cubic',
@@ -45,6 +44,8 @@ class lattice extends StatefulWidget {
 
 class _latticeState extends State<lattice> {
   int latticeIndex = 1;
+
+  int compIndex = 1;
   @override
   Widget build(BuildContext context) {
     Color getColor(Set<MaterialState> states) {
@@ -84,7 +85,7 @@ class _latticeState extends State<lattice> {
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -99,7 +100,7 @@ class _latticeState extends State<lattice> {
                               style: const TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -162,6 +163,9 @@ class _latticeState extends State<lattice> {
                 Row(
                   children: [
                     Checkbox(
+                      activeColor: Colors.green,
+                      // mouseCursor: true,
+                      // fillColor: true,
                       checkColor: Colors.blue,
                       fillColor: MaterialStateProperty.resolveWith(getColor),
                       value: show,
@@ -172,7 +176,7 @@ class _latticeState extends State<lattice> {
                       },
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 5.0, left: 8.0),
+                      padding: const EdgeInsets.only(top: 8.0, left: 8.0),
                       child: Container(
                         height: 25,
                         width: 200,
@@ -198,89 +202,105 @@ class _latticeState extends State<lattice> {
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton2(
+                        isExpanded: true,
+                        hint: Row(
+                          children: const [
+                            Icon(
+                              Icons.list,
+                              size: 16,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 4,
+                            ),
+                            SizedBox(
+                              child: Text(
+                                '{001}<100> Cube',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                        items: comp
+                            .map((item) => DropdownMenuItem<String>(
+                                  value: item,
+                                  child: Text(
+                                    item,
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ))
+                            .toList(),
+                        value: component,
+                        onChanged: (value) {
+                          setState(() {
+                            component = value as String;
+                            compIndex = comp.indexOf(component) + 1;
+                          });
+                        },
+                        icon: const Icon(Icons.arrow_downward_rounded),
+                        iconSize: 14,
+                        iconEnabledColor: Colors.white,
+                        iconDisabledColor: Colors.grey,
+                        buttonHeight: 30,
+                        buttonWidth: 200,
+                        buttonPadding:
+                            const EdgeInsets.only(left: 14, right: 14),
+                        buttonDecoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          border: Border.all(
+                            color: Colors.black26,
+                          ),
+                          color: Colors.blue,
+                        ),
+                        buttonElevation: 2,
+                        itemHeight: 30,
+                        itemPadding: const EdgeInsets.only(left: 14, right: 14),
+                        dropdownMaxHeight: 200,
+                        dropdownWidth: 220,
+                        dropdownPadding: null,
+                        dropdownDecoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          color: Colors.blue[800],
+                        ),
+                        dropdownElevation: 8,
+                        scrollbarRadius: const Radius.circular(40),
+                        scrollbarThickness: 6,
+                        scrollbarAlwaysShow: true,
+                        offset: const Offset(-20, 0),
+                      ),
+                    ),
+                  ),
+                ),
               ],
-            ),
-          if (latticeIndex == 2)
+            )
+          else if (latticeIndex == 2)
             Column(
               children: [],
             )
-          // DropdownButtonHideUnderline(
-          //   child: DropdownButton2(
-          //     isExpanded: true,
-          //     hint: Row(
-          //       children: const [
-          //         Icon(
-          //           Icons.list,
-          //           size: 16,
-          //           color: Colors.white,
-          //         ),
-          //         SizedBox(
-          //           width: 4,
-          //         ),
-          //         Expanded(
-          //           child: Text(
-          //             '{001}<100> Cube',
-          //             style: TextStyle(
-          //               fontSize: 14,
-          //               fontWeight: FontWeight.bold,
-          //               color: Colors.white,
-          //             ),
-          //             overflow: TextOverflow.ellipsis,
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //     items: comp
-          //         .map((item) => DropdownMenuItem<String>(
-          //               value: component,
-          //               child: Text(
-          //                 component,
-          //                 style: const TextStyle(
-          //                   fontSize: 14,
-          //                   fontWeight: FontWeight.bold,
-          //                   color: Colors.white,
-          //                 ),
-          //                 overflow: TextOverflow.ellipsis,
-          //               ),
-          //             ))
-          //         .toList(),
-          //     value: component,
-          //     onChanged: (value) {
-          //       setState(() {
-          //         component = value as String;
-          //       });
-          //     },
-          //     icon: const Icon(Icons.arrow_downward_rounded),
-          //     iconSize: 14,
-          //     iconEnabledColor: Colors.white,
-          //     iconDisabledColor: Colors.grey,
-          //     buttonHeight: 30,
-          //     buttonWidth: 160,
-          //     buttonPadding: const EdgeInsets.only(left: 14, right: 14),
-          //     buttonDecoration: BoxDecoration(
-          //       borderRadius: BorderRadius.circular(14),
-          //       border: Border.all(
-          //         color: Colors.black26,
-          //       ),
-          //       color: Colors.blue,
-          //     ),
-          //     buttonElevation: 2,
-          //     itemHeight: 30,
-          //     itemPadding: const EdgeInsets.only(left: 14, right: 14),
-          //     dropdownMaxHeight: 200,
-          //     dropdownWidth: 160,
-          //     dropdownPadding: null,
-          //     dropdownDecoration: BoxDecoration(
-          //       borderRadius: BorderRadius.circular(14),
-          //       color: Colors.blue[800],
-          //     ),
-          //     dropdownElevation: 8,
-          //     scrollbarRadius: const Radius.circular(40),
-          //     scrollbarThickness: 6,
-          //     scrollbarAlwaysShow: true,
-          //     offset: const Offset(-20, 0),
-          //   ),
-          // ),
+          else if (latticeIndex == 3)
+            Column(
+              children: [],
+            )
+          else if (latticeIndex == 4)
+            Column(
+              children: [],
+            )
         ],
       ),
     );

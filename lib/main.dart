@@ -21,7 +21,7 @@ class _appScreenState extends State<appScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: new ThemeData(scaffoldBackgroundColor: const Color(0x000000)),
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0x000000)),
       home: ResponsiveSizer(builder: (context, orientation, screenType) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
