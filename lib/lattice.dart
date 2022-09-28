@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 String latticetype = "Cubic";
 String component = "{001}<100> Cube";
@@ -173,8 +174,8 @@ class _latticeState extends State<lattice> {
                   iconSize: 14,
                   iconEnabledColor: Colors.white,
                   iconDisabledColor: Colors.grey,
-                  buttonHeight: 30,
-                  buttonWidth: 160,
+                  buttonHeight: 3.7.h,
+                  buttonWidth: 41.w,
                   buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                   buttonDecoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(14),
@@ -184,10 +185,10 @@ class _latticeState extends State<lattice> {
                     color: Colors.blue,
                   ),
                   buttonElevation: 2,
-                  itemHeight: 30,
+                  itemHeight: 3.7.h,
                   itemPadding: const EdgeInsets.only(left: 14, right: 14),
-                  dropdownMaxHeight: 200,
-                  dropdownWidth: 160,
+                  dropdownMaxHeight: 24.6.h,
+                  dropdownWidth: 41.w,
                   dropdownPadding: null,
                   dropdownDecoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(14),
@@ -203,8 +204,8 @@ class _latticeState extends State<lattice> {
               Padding(
                 padding: const EdgeInsets.only(top: 5.0, left: 8.0),
                 child: Container(
-                  height: 25,
-                  width: 100,
+                  height: 3.h,
+                  width: 25.6.w,
                   child: const Text(
                     'Lattice Type',
                     style: TextStyle(color: Colors.white),
@@ -215,10 +216,11 @@ class _latticeState extends State<lattice> {
           ),
           if (latticeIndex == 1)
             Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: 50,
-                  width: 350,
+                  height: 6.1.h,
+                  width: 89.8.w,
                   alignment: Alignment.topLeft,
                   child: Theme(
                     data: ThemeData(unselectedWidgetColor: Colors.white),
@@ -248,8 +250,8 @@ class _latticeState extends State<lattice> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Container(
-                      height: 25,
-                      width: 200,
+                      height: 3.h,
+                      width: 51.3.w,
                       child: const Text(
                         'Ideal texture components',
                         style: TextStyle(color: Colors.white),
@@ -310,8 +312,8 @@ class _latticeState extends State<lattice> {
                       iconSize: 14,
                       iconEnabledColor: Colors.white,
                       iconDisabledColor: Colors.grey,
-                      buttonHeight: 30,
-                      buttonWidth: 200,
+                      buttonHeight: 3.7.h,
+                      buttonWidth: 56.4.w,
                       buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                       buttonDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
@@ -321,10 +323,10 @@ class _latticeState extends State<lattice> {
                         color: Colors.blue,
                       ),
                       buttonElevation: 2,
-                      itemHeight: 30,
+                      itemHeight: 3.7.h,
                       itemPadding: const EdgeInsets.only(left: 14, right: 14),
-                      dropdownMaxHeight: 200,
-                      dropdownWidth: 220,
+                      dropdownMaxHeight: 24.6.h,
+                      dropdownWidth: 56.4.w,
                       dropdownPadding: null,
                       dropdownDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
@@ -346,8 +348,8 @@ class _latticeState extends State<lattice> {
               child: Row(
                 children: [
                   Container(
-                    height: 20,
-                    width: 300,
+                    height: 2.4.h,
+                    width: 77.w,
                     child: Slider.adaptive(
                         value: c,
                         min: 1.00,
@@ -366,8 +368,8 @@ class _latticeState extends State<lattice> {
                         color: Colors.blue[800],
                         borderRadius:
                             const BorderRadius.all(Radius.circular(5))),
-                    height: 35,
-                    width: 35,
+                    height: 4.3.h,
+                    width: 9.w,
                     child: TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -382,8 +384,8 @@ class _latticeState extends State<lattice> {
                   Padding(
                     padding: const EdgeInsets.only(top: 3, left: 5.0),
                     child: Container(
-                      height: 25,
-                      width: 25,
+                      height: 3.h,
+                      width: 6.4.w,
                       child: const Text(
                         'c/a',
                         style: TextStyle(color: Colors.white),
@@ -399,8 +401,8 @@ class _latticeState extends State<lattice> {
               child: Row(
                 children: [
                   SizedBox(
-                    height: 20,
-                    width: 300,
+                    height: 2.4.h,
+                    width: 77.w,
                     child: Slider.adaptive(
                         value: b,
                         min: 0.50,
@@ -419,8 +421,8 @@ class _latticeState extends State<lattice> {
                         color: Colors.blue[800],
                         borderRadius:
                             const BorderRadius.all(Radius.circular(5))),
-                    height: 35,
-                    width: 35,
+                    height: 4.3.h,
+                    width: 9.w,
                     child: TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -435,8 +437,8 @@ class _latticeState extends State<lattice> {
                   Padding(
                     padding: const EdgeInsets.only(top: 5, left: 5.0),
                     child: Container(
-                      height: 25,
-                      width: 25,
+                      height: 3.h,
+                      width: 6.4.w,
                       child: const Text(
                         'b/a',
                         style: TextStyle(color: Colors.white),
@@ -452,8 +454,8 @@ class _latticeState extends State<lattice> {
               child: Row(
                 children: [
                   SizedBox(
-                    height: 20,
-                    width: 300,
+                    height: 2.4.h,
+                    width: 77.w,
                     child: Slider.adaptive(
                         value: y,
                         min: 1.00,
@@ -472,8 +474,8 @@ class _latticeState extends State<lattice> {
                         color: Colors.blue[800],
                         borderRadius:
                             const BorderRadius.all(Radius.circular(5))),
-                    height: 35,
-                    width: 53,
+                    height: 4.3.h,
+                    width: 13.6.w,
                     child: TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -486,10 +488,10 @@ class _latticeState extends State<lattice> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 5, left: 5.0),
+                    padding: const EdgeInsets.only(top: 5.0, left: 5.0),
                     child: Container(
-                      height: 25,
-                      width: 15,
+                      height: 3.h,
+                      width: 4.w,
                       child: const Text(
                         'Y',
                         style: TextStyle(color: Colors.white),

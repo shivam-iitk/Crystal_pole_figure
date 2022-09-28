@@ -31,7 +31,7 @@ class _appScreenState extends State<appScreen> {
               children: [
                 Container(
                   height: 36.h,
-                  width: 400,
+                  width: 102.7.w,
                   color: Colors.black87,
                 ),
                 Divider(
@@ -41,8 +41,8 @@ class _appScreenState extends State<appScreen> {
                   endIndent: 2.w,
                 ),
                 Container(
-                  height: 31.h,
-                  width: 400,
+                  height: 30.h,
+                  width: 102.7.w,
                   color: Colors.black87,
                 ),
                 Divider(
@@ -53,7 +53,7 @@ class _appScreenState extends State<appScreen> {
                 ),
                 Container(
                   height: 25.h,
-                  width: 400,
+                  width: 102.7.w,
                   color: Colors.black87,
                   child: Column(
                     children: [
@@ -67,7 +67,8 @@ class _appScreenState extends State<appScreen> {
                               });
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(
+                                  top: 8.0, left: 8.0, right: 8.0),
                               child: Container(
                                 height: 3.7.h,
                                 child: Chip(
@@ -92,9 +93,10 @@ class _appScreenState extends State<appScreen> {
                               });
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(
+                                  top: 8.0, left: 8.0, right: 8.0),
                               child: Container(
-                                height: 30,
+                                height: 3.7.h,
                                 child: Chip(
                                   backgroundColor: (selectedIndex == 2)
                                       ? Colors.blue
@@ -116,9 +118,13 @@ class _appScreenState extends State<appScreen> {
                               });
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(
+                                top: 8.0,
+                                left: 8.0,
+                                right: 8.0,
+                              ),
                               child: Container(
-                                height: 30,
+                                height: 3.7.h,
                                 child: Chip(
                                   backgroundColor: (selectedIndex == 3)
                                       ? Colors.blue
@@ -140,9 +146,10 @@ class _appScreenState extends State<appScreen> {
                               });
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(
+                                  top: 8.0, left: 8.0, right: 8.0),
                               child: Container(
-                                height: 30,
+                                height: 3.7.h,
                                 child: Chip(
                                   backgroundColor: (selectedIndex == 4)
                                       ? Colors.blue
